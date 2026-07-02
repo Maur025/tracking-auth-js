@@ -1,15 +1,13 @@
 import "dotenv/config";
-import { overrideLog } from "atx-prettylog";
+import { logger } from "./core/common/logger.js";
 import { appContext } from "./core/app-context.js";
 import { userRoutes } from "./modules/authentication/user.routes.js";
-
-overrideLog();
 
 const bootstrap = async () => {
 	try {
 		const { registerAppRoutes, startServer } = appContext();
 
-		startServer({
+		await startServer({
 			listenCallback: (port) => {
 				console.info(`[SERVER] Application is running on port ${port}`);
 			},
@@ -21,7 +19,7 @@ const bootstrap = async () => {
 			},
 		});
 	} catch (error) {
-		console.error("[BOOTSTRAP] Error occurred while bootstrapping the application:", error);
+		logger.error("[BOOTSTRAP] Error occurred while bootstrapping the application:", error);
 		process.exit(1);
 	}
 };
