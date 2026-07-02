@@ -8,7 +8,8 @@
 		"dev": "node --watch src/index",
 		"test": "vitest",
 		"test:watch": "vitest --watch",
-		"lint": "eslint . --ext .js"
+		"lint": "eslint . --ext .js",
+		"test:architecture": "depcruise src --config .dependency-cruiser.cjs"
 	},
 	"keywords": [],
 	"author": "",
@@ -28,6 +29,7 @@
 		"@types/cors": "^2.8.19",
 		"@types/express": "^5.0.6",
 		"@types/node": "^26.0.1",
+		"dependency-cruiser": "^18.0.0",
 		"eslint": "^10.6.0",
 		"globals": "^17.7.0",
 		"vitest": "^4.1.9"
