@@ -6,10 +6,10 @@ module.exports = {
 			comment:
 				"This module depends on a module from another module. Consider using dependency inversion or a shared interface.",
 			severity: "error",
-			from: { path: "^src/modules/(?<modulename>[^/]+)/.+" },
+			from: { path: "^src/modules/([^/]+)/.+" },
 			to: {
-				path: "^src/modules/[^/]+/.+",
-				pathNot: "^src/modules/${from.modulename}/.+",
+				path: "^src/modules/([^/]+)/.+",
+				pathNot: "^src/modules/$1/.+",
 			},
 		},
 		{
