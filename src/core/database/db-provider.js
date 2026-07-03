@@ -1,8 +1,8 @@
 import { drizzle } from "drizzle-orm/libsql";
 import { migrate } from "drizzle-orm/libsql/migrator";
-import * as schema from "./schema.js";
 import { createDirectoryFromResourcePath } from "../common/create-directory-from-resource-path.js";
 import path from "node:path";
+import { relations } from "./relation.js";
 
 /**
  * @param {object} request
@@ -15,7 +15,7 @@ export const dbProvider = ({ environment }) => {
 		connection: {
 			url: `file:${environment.DB_URL}`,
 		},
-		schema,
+		relations,
 	});
 
 	const migrateDb = async () => {
