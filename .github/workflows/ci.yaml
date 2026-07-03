@@ -1,0 +1,42 @@
+name: CI auth
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  review-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [24]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup node ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Syntax check
+        run: pnpm lint
+        continue-on-error: false
+
+      - name: Run architecture test
+        run: pnpm test:architecture
+        continue-on-error: false
+
+      - name: Run unit tests
+        run: pnpm test
