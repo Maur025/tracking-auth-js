@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"preinstall": "only-allow pnpm",
 		"start": "node src/index",
 		"dev": "node --watch src/index",
 		"test": "vitest",
@@ -38,6 +39,7 @@
 		"drizzle-kit": "1.0.0-rc.4",
 		"eslint": "^10.6.0",
 		"globals": "^17.7.0",
+		"only-allow": "^1.2.2",
 		"vitest": "^4.1.9"
 	},
 	"engines": {
