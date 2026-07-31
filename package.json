@@ -20,7 +20,7 @@
 	"dependencies": {
 		"@libsql/client": "^0.17.4",
 		"atx-prettylog": "^1.0.3",
-		"chalk": "^5.6.2",
+		"chalk": "^6.0.0",
 		"compression": "^1.8.1",
 		"cors": "^2.8.6",
 		"dotenv": "^17.4.2",
