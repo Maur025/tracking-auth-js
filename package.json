@@ -38,7 +38,7 @@
 		"dependency-cruiser": "^18.0.0",
 		"drizzle-kit": "1.0.0-rc.4",
 		"eslint": "^10.6.0",
-		"globals": "^17.7.0",
+		"globals": "^17.8.0",
 		"only-allow": "^1.2.2",
 		"vitest": "^4.1.9"
 	},
