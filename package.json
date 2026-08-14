@@ -24,7 +24,7 @@
 		"compression": "^1.8.1",
 		"cors": "^2.8.6",
 		"dotenv": "^17.4.2",
-		"drizzle-orm": "1.0.0-rc.4",
+		"drizzle-orm": "1.0.0-rc.5-ab785fc",
 		"express": "^5.2.1",
 		"http-status-codes": "^2.3.0",
 		"uuid": "^14.0.1",
